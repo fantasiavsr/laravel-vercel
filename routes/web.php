@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ChatGPTController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/test', [Controller::class, 'test'])->name('test');
+Route::get('/chat', [App\Http\Controllers\ChatGPTController::class, 'askToChatGpt']);
+Route::get('/analyze', [App\Http\Controllers\Controller::class, 'executePythonScript']);
